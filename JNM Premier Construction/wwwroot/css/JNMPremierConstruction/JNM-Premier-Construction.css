@@ -1,0 +1,1330 @@
+﻿
+/* =====================================================
+   JNM PREMIER CONSTRUCTION
+   MASTER WEBSITE STYLESHEET
+
+   Warm | Family-Oriented | Professional | Craftsmanship
+   ===================================================== */
+
+
+/* =====================================================
+   1. BRAND COLORS & GLOBAL STYLES
+   ===================================================== */
+
+:root {
+    --jnm-primary: #465044;
+    --jnm-primary-dark: #353C33;
+    --jnm-secondary: #795B43;
+    --jnm-accent: #B7895D;
+    --jnm-accent-hover: #D1A676;
+    --jnm-background: #F8F4ED;
+    --jnm-sand: #E5D9C8;
+    --jnm-white: #FFFFFF;
+    --jnm-text: #353A32;
+    --jnm-muted: #665F55;
+    --jnm-border: #E7DFD2;
+    --jnm-radius: 6px;
+    --jnm-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--jnm-text);
+    background: var(--jnm-background);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    transition: color .2s ease;
+}
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+        outline: 3px solid var(--jnm-accent);
+        outline-offset: 3px;
+    }
+
+
+/* =====================================================
+   2. SHARED PAGE ELEMENTS
+   ===================================================== */
+
+.jnm-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 85px 6%;
+}
+
+.jnm-page-header {
+    background: var(--jnm-primary);
+    color: white;
+    text-align: center;
+    padding: 85px 6%;
+}
+
+    .jnm-page-header h1 {
+        color: white;
+        font-size: clamp(2.2rem, 4vw, 3.5rem);
+        font-weight: 800;
+        margin-bottom: 15px;
+    }
+
+    .jnm-page-header p {
+        max-width: 700px;
+        margin: auto;
+        color: #F0EDE6;
+        line-height: 1.8;
+    }
+
+.jnm-eyebrow {
+    color: var(--jnm-secondary);
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.jnm-section-heading {
+    max-width: 750px;
+    text-align: center;
+    margin: 0 auto 45px;
+}
+
+    .jnm-section-heading h2 {
+        color: var(--jnm-primary);
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 800;
+        margin: 15px 0;
+    }
+
+    .jnm-section-heading p {
+        color: var(--jnm-muted);
+        line-height: 1.8;
+    }
+
+.jnm-btn-primary,
+.e-btn.jnm-btn-primary {
+    background: var(--jnm-accent);
+    border: 1px solid var(--jnm-accent);
+    color: #20251F;
+    padding: 14px 26px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+    .jnm-btn-primary:hover,
+    .e-btn.jnm-btn-primary:hover {
+        background: var(--jnm-accent-hover);
+        border-color: var(--jnm-accent-hover);
+        color: #20251F;
+    }
+
+.jnm-btn-outline,
+.e-btn.jnm-btn-outline {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 14px 26px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+    .jnm-btn-outline:hover,
+    .e-btn.jnm-btn-outline:hover {
+        background: white;
+        color: var(--jnm-primary);
+    }
+
+
+/* =====================================================
+   3. HEADER & NAVIGATION
+   ===================================================== */
+
+.jnm-header {
+    background: var(--jnm-background);
+    border-bottom: 1px solid var(--jnm-sand);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .05);
+}
+
+.jnm-header-inner {
+    max-width: 1400px;
+    margin: auto;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.jnm-brand {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    line-height: 1.1;
+    flex-shrink: 0;
+}
+
+.jnm-brand-main {
+    color: var(--jnm-primary);
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.jnm-brand-sub {
+    color: var(--jnm-secondary);
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-top: 6px;
+}
+
+.jnm-nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+    .jnm-nav a {
+        color: var(--jnm-primary);
+        text-decoration: none;
+        font-size: .95rem;
+        font-weight: 600;
+    }
+
+        .jnm-nav a:hover,
+        .jnm-nav a.active:not(.jnm-nav-cta) {
+            color: var(--jnm-secondary);
+        }
+
+    .jnm-nav .jnm-nav-cta {
+        background: var(--jnm-primary);
+        color: white;
+        padding: 13px 20px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+        .jnm-nav .jnm-nav-cta:hover,
+        .jnm-nav .jnm-nav-cta.active {
+            background: var(--jnm-secondary);
+            color: white;
+        }
+
+.jnm-menu-toggle {
+    display: none;
+    background: transparent;
+    color: var(--jnm-primary);
+    border: 1px solid var(--jnm-sand);
+    padding: 10px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.jnm-main {
+    min-height: 60vh;
+}
+
+
+/* =====================================================
+   4. HOME PAGE - HERO
+   ===================================================== */
+
+.jnm-hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 100px 7%;
+    background: linear-gradient( 90deg, rgba(32, 38, 31, .94) 0%, rgba(32, 38, 31, .72) 48%, rgba(32, 38, 31, .15) 100% ), url('/images/hero-home.jpg') center / cover no-repeat;
+    color: white;
+}
+
+.jnm-hero-content {
+    max-width: 760px;
+}
+
+.jnm-hero .jnm-eyebrow {
+    color: var(--jnm-sand);
+}
+
+.jnm-hero h1 {
+    color: white;
+    font-size: clamp(2.7rem, 5vw, 5rem);
+    font-weight: 800;
+    line-height: 1.12;
+    margin: 20px 0 25px;
+}
+
+.jnm-hero p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    max-width: 610px;
+    color: #F0EDE6;
+}
+
+.jnm-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.jnm-hero-location {
+    margin-top: 35px;
+    font-size: .95rem;
+    color: #F0EDE6;
+}
+
+    .jnm-hero-location i {
+        margin-right: 8px;
+    }
+
+
+/* =====================================================
+   5. HOME PAGE - TRUST INDICATORS
+   ===================================================== */
+
+.jnm-trust {
+    background: var(--jnm-sand);
+    padding: 35px 7%;
+}
+
+.jnm-trust-grid {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.jnm-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+    .jnm-trust-item > i {
+        font-size: 2rem;
+        color: var(--jnm-secondary);
+    }
+
+    .jnm-trust-item h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+        color: var(--jnm-primary);
+    }
+
+    .jnm-trust-item p {
+        margin: 0;
+        color: #65594E;
+    }
+
+
+/* =====================================================
+   6. HOME PAGE - ABOUT PREVIEW
+   ===================================================== */
+
+.jnm-about-section {
+    padding: 95px 7%;
+    background: var(--jnm-background);
+}
+
+.jnm-about-grid {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+    align-items: center;
+}
+
+.jnm-about-image img {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    border-radius: var(--jnm-radius);
+    box-shadow: var(--jnm-shadow);
+}
+
+.jnm-about-content h2 {
+    color: var(--jnm-primary);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.jnm-about-content p {
+    color: var(--jnm-muted);
+    line-height: 1.85;
+    margin-bottom: 18px;
+}
+
+.jnm-text-link {
+    color: var(--jnm-secondary);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+    .jnm-text-link:hover {
+        color: var(--jnm-primary);
+        text-decoration: underline;
+    }
+
+    .jnm-text-link i {
+        margin-left: 8px;
+    }
+
+
+/* =====================================================
+   7. SERVICES PAGE & HOME SERVICE CARDS
+   ===================================================== */
+
+.jnm-services-section {
+    background: white;
+    padding: 95px 7%;
+}
+
+.jnm-service-grid {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.jnm-service-card {
+    background: var(--jnm-background);
+    border: 1px solid var(--jnm-border);
+    border-radius: var(--jnm-radius);
+    overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+    .jnm-service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--jnm-shadow);
+    }
+
+.jnm-service-image img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.jnm-service-content {
+    padding: 24px;
+}
+
+    .jnm-service-content h3 {
+        color: var(--jnm-primary);
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .jnm-service-content p {
+        color: var(--jnm-muted);
+        line-height: 1.7;
+        min-height: 85px;
+    }
+
+    .jnm-service-content a {
+        color: var(--jnm-secondary);
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+        .jnm-service-content a:hover {
+            text-decoration: underline;
+        }
+
+        .jnm-service-content a i {
+            margin-left: 6px;
+        }
+
+
+/* =========================================
+   SERVICES PAGE - HEADER
+   ========================================= */
+
+.jnm-services-header {
+    background: linear-gradient( rgba(40, 48, 39, 0.85), rgba(40, 48, 39, 0.85) ), url('/images/service-renovations.jpg') center / cover no-repeat;
+    padding: 110px 6%;
+}
+
+    .jnm-services-header .jnm-eyebrow {
+        color: var(--jnm-sand);
+    }
+
+/* =========================================
+   SERVICES PAGE - INTRO
+   ========================================= */
+
+.jnm-services-intro {
+    background: var(--jnm-background);
+    padding: 85px 6% 20px;
+}
+
+/* =========================================
+   SERVICES PAGE - CARDS
+   ========================================= */
+
+.jnm-services-page-section {
+    background: var(--jnm-background);
+    padding: 30px 6% 95px;
+}
+
+.jnm-services-page-grid {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.jnm-service-detail-card {
+    background: white;
+    border: 1px solid var(--jnm-border);
+    border-radius: var(--jnm-radius);
+    overflow: hidden;
+    box-shadow: var(--jnm-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.jnm-service-detail-image img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    display: block;
+}
+
+.jnm-service-detail-content {
+    padding: 35px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.jnm-service-detail-icon {
+    width: 55px;
+    height: 55px;
+    background: var(--jnm-sand);
+    color: var(--jnm-secondary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.jnm-service-detail-content h2 {
+    color: var(--jnm-primary);
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.jnm-service-detail-content p {
+    color: var(--jnm-muted);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.jnm-service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+}
+
+    .jnm-service-features li {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 12px;
+        color: var(--jnm-text);
+    }
+
+    .jnm-service-features i {
+        color: var(--jnm-secondary);
+        font-size: .85rem;
+        flex-shrink: 0;
+    }
+
+.jnm-service-estimate-link {
+    color: var(--jnm-secondary);
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+    .jnm-service-estimate-link:hover {
+        color: var(--jnm-primary);
+        text-decoration: underline;
+    }
+
+    .jnm-service-estimate-link i {
+        margin-left: 8px;
+    }
+
+/* =========================================
+   SERVICES PAGE - WHY CHOOSE US
+   ========================================= */
+
+.jnm-services-why {
+    background: white;
+    padding: 95px 7%;
+}
+
+.jnm-services-why-inner {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.jnm-services-why-content h2 {
+    color: var(--jnm-primary);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 800;
+    margin: 18px 0 25px;
+}
+
+.jnm-services-why-content p {
+    color: var(--jnm-muted);
+    line-height: 1.85;
+    margin-bottom: 18px;
+}
+
+.jnm-services-why-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: var(--jnm-radius);
+    box-shadow: var(--jnm-shadow);
+}
+
+/* =========================================
+   SERVICES PAGE - SERVICE AREA
+   ========================================= */
+
+.jnm-services-area {
+    background: var(--jnm-sand);
+    padding: 85px 7%;
+}
+
+.jnm-services-area-details {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    text-align: center;
+}
+
+    .jnm-services-area-details > div {
+        padding: 30px;
+    }
+
+    .jnm-services-area-details i {
+        font-size: 2rem;
+        color: var(--jnm-secondary);
+        margin-bottom: 20px;
+    }
+
+    .jnm-services-area-details h3 {
+        color: var(--jnm-primary);
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+
+    .jnm-services-area-details p {
+        color: var(--jnm-muted);
+    }
+
+/* =========================================
+   SERVICES PAGE - RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1050px) {
+    .jnm-services-why-inner {
+        gap: 35px;
+    }
+}
+
+@media (max-width: 700px) {
+    .jnm-services-header {
+        padding: 75px 6%;
+    }
+
+    .jnm-services-page-grid,
+    .jnm-services-why-inner,
+    .jnm-services-area-details {
+        grid-template-columns: 1fr;
+    }
+
+    .jnm-services-intro {
+        padding: 65px 6% 15px;
+    }
+
+    .jnm-services-page-section,
+    .jnm-services-why,
+    .jnm-services-area {
+        padding: 65px 6%;
+    }
+
+    .jnm-service-detail-image img {
+        height: 220px;
+    }
+
+    .jnm-service-detail-content {
+        padding: 25px;
+    }
+
+    .jnm-services-why-image img {
+        height: 300px;
+    }
+}
+
+
+/* =========================================
+   ABOUT US - PAGE HEADER
+   ========================================= */
+
+.jnm-about-header {
+    background: linear-gradient( rgba(40, 48, 39, 0.85), rgba(40, 48, 39, 0.85) ), url('/images/about-header.jpg') center / cover no-repeat;
+    padding: 110px 6%;
+}
+
+    .jnm-about-header .jnm-eyebrow {
+        color: var(--jnm-sand);
+    }
+
+.jnm-page-header-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+/* =========================================
+   ABOUT US - EXPERIENCE HIGHLIGHT
+   ========================================= */
+
+.jnm-experience-section {
+    background: var(--jnm-sand);
+    padding: 75px 7%;
+}
+
+.jnm-experience-inner {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.jnm-experience-number {
+    text-align: center;
+    border-right: 1px solid #C9B9A4;
+    padding-right: 40px;
+}
+
+    .jnm-experience-number span {
+        display: block;
+        font-size: clamp(5rem, 9vw, 8rem);
+        font-weight: 800;
+        color: var(--jnm-primary);
+        line-height: 1;
+    }
+
+    .jnm-experience-number p {
+        color: var(--jnm-secondary);
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-top: 15px;
+    }
+
+.jnm-experience-description h2 {
+    color: var(--jnm-primary);
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.jnm-experience-description p {
+    color: var(--jnm-muted);
+    line-height: 1.8;
+}
+
+.jnm-values-grid {
+    margin:3.5rem;
+    padding: .5rem;
+}
+
+/* =========================================
+   ABOUT US - EXPERTISE
+   ========================================= */
+
+.jnm-about-expertise {
+    background: var(--jnm-background);
+    padding: 95px 7%;
+}
+
+.jnm-expertise-grid {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.jnm-expertise-card {
+    background: white;
+    padding: 35px;
+    border: 1px solid var(--jnm-border);
+    border-radius: var(--jnm-radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,.04);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+    .jnm-expertise-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--jnm-shadow);
+    }
+
+.jnm-expertise-icon {
+    width: 58px;
+    height: 58px;
+    background: var(--jnm-sand);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+    .jnm-expertise-icon i {
+        font-size: 1.5rem;
+        color: var(--jnm-secondary);
+    }
+
+.jnm-expertise-card h3 {
+    color: var(--jnm-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.jnm-expertise-card p {
+    color: var(--jnm-muted);
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* =========================================
+   ABOUT US - CREDENTIALS
+   ========================================= */
+
+.jnm-credentials-section {
+    background: #353C33;
+    color: white;
+    text-align: center;
+    padding: 90px 7%;
+}
+
+.jnm-credentials-inner {
+    max-width: 950px;
+    margin: auto;
+}
+
+.jnm-credentials-section .jnm-eyebrow {
+    color: var(--jnm-sand);
+}
+
+.jnm-credentials-section h2 {
+    color: white;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 800;
+    margin: 18px 0 25px;
+}
+
+.jnm-credentials-section p {
+    color: #EAE5DC;
+    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto 18px;
+}
+
+.jnm-credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.jnm-credential {
+    padding: 25px;
+    border: 1px solid #687064;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+    .jnm-credential i {
+        color: var(--jnm-accent-hover);
+        font-size: 2rem;
+    }
+
+    .jnm-credential span {
+        color: white;
+        font-weight: 700;
+    }
+
+/* =========================================
+   ABOUT US - SERVICE AREA
+   ========================================= */
+
+.jnm-about-service-area {
+    background: white;
+    padding: 85px 7%;
+}
+
+/* =========================================
+   ABOUT US - RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1050px) {
+    .jnm-expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .jnm-about-header {
+        padding: 75px 6%;
+    }
+
+    .jnm-experience-inner,
+    .jnm-expertise-grid,
+    .jnm-credentials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .jnm-experience-number {
+        border-right: none;
+        border-bottom: 1px solid #C9B9A4;
+        padding: 0 0 30px;
+    }
+
+    .jnm-experience-section,
+    .jnm-about-expertise,
+    .jnm-credentials-section,
+    .jnm-about-service-area {
+        padding: 65px 6%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .jnm-expertise-card {
+        transition: none;
+    }
+}
+
+
+
+/* =====================================================
+   9. PROJECTS / PORTFOLIO PAGE
+   ===================================================== */
+
+.jnm-projects-section {
+    background: var(--jnm-background);
+    padding: 85px 6%;
+}
+
+.jnm-project-grid {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.jnm-project-card {
+    background: white;
+    border-radius: var(--jnm-radius);
+    overflow: hidden;
+    box-shadow: var(--jnm-shadow);
+}
+
+    .jnm-project-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform .3s ease;
+    }
+
+    .jnm-project-card:hover img {
+        transform: scale(1.03);
+    }
+
+.jnm-project-content {
+    padding: 25px;
+}
+
+    .jnm-project-content h3 {
+        color: var(--jnm-primary);
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    .jnm-project-content p {
+        color: var(--jnm-muted);
+        line-height: 1.7;
+    }
+
+.jnm-project-category {
+    color: var(--jnm-secondary);
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   10. CONTACT / ESTIMATE REQUEST PAGE
+   ===================================================== */
+
+.jnm-contact-section {
+    padding: 85px 6%;
+    background: var(--jnm-background);
+}
+
+.jnm-contact-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+}
+
+.jnm-contact-form {
+    background: white;
+    padding: 40px;
+    border-radius: var(--jnm-radius);
+    box-shadow: var(--jnm-shadow);
+}
+
+    .jnm-contact-form h2 {
+        color: var(--jnm-primary);
+        margin-bottom: 25px;
+    }
+
+.jnm-form-group {
+    margin-bottom: 22px;
+}
+
+    .jnm-form-group label {
+        display: block;
+        color: var(--jnm-text);
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .jnm-form-group input,
+    .jnm-form-group select,
+    .jnm-form-group textarea {
+        width: 100%;
+        padding: 13px 15px;
+        border: 1px solid var(--jnm-border);
+        border-radius: 4px;
+        background: white;
+        color: var(--jnm-text);
+    }
+
+        .jnm-form-group input:focus,
+        .jnm-form-group select:focus,
+        .jnm-form-group textarea:focus {
+            border-color: var(--jnm-accent);
+            outline: 2px solid var(--jnm-accent);
+            outline-offset: 1px;
+        }
+
+.jnm-contact-info {
+    padding: 25px 0;
+}
+
+    .jnm-contact-info h2 {
+        color: var(--jnm-primary);
+        margin-bottom: 25px;
+    }
+
+    .jnm-contact-info p {
+        color: var(--jnm-muted);
+        line-height: 1.8;
+    }
+
+    .jnm-contact-info i {
+        color: var(--jnm-secondary);
+        margin-right: 10px;
+    }
+
+
+/* =====================================================
+   11. CONTACT CTA - SHARED SECTION
+   ===================================================== */
+
+.jnm-contact-cta {
+    background: var(--jnm-primary);
+    color: white;
+    text-align: center;
+    padding: 90px 7%;
+}
+
+    .jnm-contact-cta .jnm-eyebrow {
+        color: var(--jnm-sand);
+    }
+
+    .jnm-contact-cta h2 {
+        color: white;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 800;
+        margin: 15px 0;
+    }
+
+    .jnm-contact-cta p {
+        max-width: 600px;
+        margin: 15px auto 30px;
+        color: #F0EDE6;
+        line-height: 1.8;
+    }
+
+
+/* =====================================================
+   12. FOOTER
+   ===================================================== */
+
+.jnm-footer {
+    background: var(--jnm-primary-dark);
+    color: var(--jnm-background);
+    padding: 65px 6% 20px;
+}
+
+.jnm-footer-grid {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 50px;
+}
+
+.jnm-footer h2,
+.jnm-footer h3 {
+    color: var(--jnm-sand);
+    margin-bottom: 18px;
+}
+
+.jnm-footer h2 {
+    font-size: 1.5rem;
+}
+
+.jnm-footer h3 {
+    font-size: 1.1rem;
+}
+
+.jnm-footer p {
+    color: #EAE5DC;
+    line-height: 1.8;
+}
+
+.jnm-footer a {
+    display: block;
+    color: #EAE5DC;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+    .jnm-footer a:hover {
+        color: var(--jnm-sand);
+    }
+
+.jnm-footer-bottom {
+    border-top: 1px solid #687064;
+    text-align: center;
+    margin-top: 45px;
+    padding-top: 20px;
+    font-size: .85rem;
+    color: #EAE5DC;
+}
+
+
+/* =====================================================
+   13. RESPONSIVE - TABLETS
+   ===================================================== */
+
+@media (max-width: 1050px) {
+
+    .jnm-menu-toggle {
+        display: block;
+    }
+
+    .jnm-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--jnm-background);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px 6%;
+        gap: 0;
+        border-bottom: 1px solid var(--jnm-sand);
+        box-shadow: var(--jnm-shadow);
+    }
+
+        .jnm-nav.open {
+            display: flex;
+        }
+
+        .jnm-nav a {
+            padding: 13px 0;
+        }
+
+        .jnm-nav .jnm-nav-cta {
+            margin-top: 12px;
+        }
+
+    .jnm-service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .jnm-project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .jnm-about-grid,
+    .jnm-about-story {
+        gap: 35px;
+    }
+
+    .jnm-contact-grid {
+        gap: 35px;
+    }
+}
+
+
+/* =====================================================
+   14. RESPONSIVE - MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .jnm-brand-main {
+        font-size: 1.25rem;
+    }
+
+    .jnm-brand-sub {
+        font-size: .65rem;
+    }
+
+    .jnm-hero {
+        min-height: 580px;
+        padding: 75px 6%;
+    }
+
+        .jnm-hero h1 {
+            font-size: clamp(2.3rem, 8vw, 3.3rem);
+        }
+
+    .jnm-trust-grid,
+    .jnm-about-grid,
+    .jnm-about-story,
+    .jnm-service-grid,
+    .jnm-project-grid,
+    .jnm-values-grid,
+    .jnm-contact-grid,
+    .jnm-footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .jnm-about-section,
+    .jnm-services-section,
+    .jnm-projects-section,
+    .jnm-contact-section {
+        padding: 65px 6%;
+    }
+
+    .jnm-about-image img,
+    .jnm-about-story img {
+        height: 300px;
+    }
+
+    .jnm-service-content p {
+        min-height: auto;
+    }
+
+    .jnm-contact-form {
+        padding: 25px;
+    }
+
+    .jnm-contact-cta {
+        padding: 70px 6%;
+    }
+}
+
+
+/* =====================================================
+   15. ACCESSIBILITY & MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+}
+
+
+/* =====================================================
+   16. ABOUT US ADDITIONAL STYLES
+   ===================================================== */
+
+/* ABOUT US - PAGE HEADER */
+
+.jnm-about-header {
+    background: linear-gradient( rgba(40, 48, 39, 0.85), rgba(40, 48, 39, 0.85) ), url('/images/about-header.jpg') center / cover no-repeat;
+    padding: 110px 6%;
+}

@@ -1,0 +1,325 @@
+﻿@page "/about"
+
+<PageTitle>About Us | JNM Premier Construction</PageTitle>
+
+<!-- PAGE HEADER -->
+<section class="jnm-page-header jnm-about-header">
+    <div class="jnm-page-header-content">
+        <span class="jnm-eyebrow">
+            GET TO KNOW JNM
+        </span>
+
+        <h1>
+            Built on Experience.<br />
+            Rooted in Family.
+        </h1>
+
+        <p>
+            Over 20 years of hands-on construction
+            experience, a commitment to quality,
+            and pride in a job done right.
+        </p>
+    </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="jnm-section jnm-about-page">
+
+    <div class="jnm-about-story">
+
+        <div class="jnm-about-story-image">
+            <img src="/images/2026-framing.jpg"
+                 alt="Interior framing during a JNM Premier Construction renovation"
+                 loading="lazy" />
+        </div>
+
+        <div class="jnm-about-story-content">
+            <span class="jnm-eyebrow">
+                OUR STORY
+            </span>
+
+            <h2>
+                A Family Business.<br />
+                Built on Hard Work.
+            </h2>
+
+            <p>
+                JNM Premier Construction is a family-owned
+                and operated construction business based
+                in Hope Mills, North Carolina.
+            </p>
+
+            <p>
+                With over 20 years of hands-on construction
+                experience, we bring knowledge, dedication,
+                and attention to detail to every project.
+            </p>
+
+            <p>
+                From complete home renovations and room
+                reconfigurations to decks, docks, fencing,
+                and interior improvements, our experience
+                spans a wide range of residential
+                construction projects.
+            </p>
+
+            <p>
+                As a family business, we believe in honest
+                communication, dependable service, and
+                treating every home with care and respect.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- EXPERIENCE HIGHLIGHT -->
+<section class="jnm-experience-section">
+    <div class="jnm-experience-inner">
+
+        <div class="jnm-experience-number">
+            <span>20+</span>
+            <p>Years of Experience</p>
+        </div>
+
+        <div class="jnm-experience-description">
+            <span class="jnm-eyebrow">
+                EXPERIENCE THAT MATTERS
+            </span>
+
+            <h2>Knowledge Built Through Hard Work.</h2>
+
+            <p>
+                Our construction background includes
+                hands-on experience with home renovations,
+                framing, flooring, drywall, windows,
+                decks, docks, and fencing.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- AREAS OF EXPERIENCE -->
+<section class="jnm-about-expertise">
+    <div class="jnm-section-heading">
+        <span class="jnm-eyebrow">
+            WHAT WE BRING TO THE TABLE
+        </span>
+
+        <h2>Our Construction Experience</h2>
+
+        <p>
+            From transforming interior spaces to building
+            outdoor structures, our experience covers
+            a variety of residential construction needs.
+        </p>
+    </div>
+
+    <div class="jnm-expertise-grid">
+
+        @foreach (var item in Expertise)
+        {
+            <article class="jnm-expertise-card">
+                <div class="jnm-expertise-icon">
+                    <i class="@item.Icon"
+                       aria-hidden="true"></i>
+                </div>
+
+                <h3>@item.Title</h3>
+                <p>@item.Description</p>
+            </article>
+        }
+
+    </div>
+</section>
+
+<!-- OUR VALUES -->
+<section class="jnm-values">
+
+    <div class="jnm-section-heading">
+        <span class="jnm-eyebrow">
+            WHAT MATTERS MOST
+        </span>
+
+        <h2>The Values Behind Our Work</h2>
+
+        <p>
+            We believe the way we treat people
+            matters just as much as the quality
+            of the work we deliver.
+        </p>
+    </div>
+
+    <div class="jnm-values-grid">
+
+        <article class="jnm-value-card">
+            <i class="fas fa-home"
+               aria-hidden="true"></i>
+
+            <h3>Family Values</h3>
+
+            <p>
+                We're a family-owned business that
+                believes in building relationships,
+                treating customers with respect,
+                and caring for every project.
+            </p>
+        </article>
+
+        <article class="jnm-value-card">
+            <i class="fas fa-hammer"
+               aria-hidden="true"></i>
+
+            <h3>Hard Work &amp; Craftsmanship</h3>
+
+            <p>
+                We take pride in our workmanship,
+                pay attention to the details,
+                and believe in doing the job right.
+            </p>
+        </article>
+
+        <article class="jnm-value-card">
+            <i class="fas fa-handshake"
+               aria-hidden="true"></i>
+
+            <h3>Honest Communication</h3>
+
+            <p>
+                We believe in clear expectations,
+                open communication, and keeping
+                customers informed throughout
+                their projects.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<!-- LICENSING AND INSURANCE -->
+<section class="jnm-credentials-section">
+    <div class="jnm-credentials-inner">
+
+        <span class="jnm-eyebrow">
+            OUR BACKGROUND
+        </span>
+
+        <h2>Experience You Can Feel Confident In.</h2>
+
+        <p>
+            Our construction background includes
+            Florida builder contractor licensure,
+            and we are currently working toward
+            obtaining our North Carolina general
+            contractor license.
+        </p>
+
+        <p>
+            JNM Premier Construction is insured
+            in both North Carolina and Florida.
+        </p>
+
+        <div class="jnm-credentials-grid">
+
+            <div class="jnm-credential">
+                <i class="fas fa-award"
+                   aria-hidden="true"></i>
+                <span>20+ Years of Experience</span>
+            </div>
+
+            <div class="jnm-credential">
+                <i class="fas fa-shield-alt"
+                   aria-hidden="true"></i>
+                <span>Insured in NC &amp; FL</span>
+            </div>
+
+            <div class="jnm-credential">
+                <i class="fas fa-users"
+                   aria-hidden="true"></i>
+                <span>Family Owned &amp; Operated</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="jnm-about-service-area">
+    <div class="jnm-section-heading">
+        <span class="jnm-eyebrow">
+            PROUDLY SERVING OUR COMMUNITY
+        </span>
+
+        <h2>Based in Hope Mills, North Carolina</h2>
+
+        <p>
+            JNM Premier Construction serves
+            Cumberland County and surrounding
+            counties. Contact us to discuss
+            your location and project needs.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT CALL TO ACTION -->
+<section class="jnm-contact-cta">
+    <span class="jnm-eyebrow">
+        LET'S GET TO WORK
+    </span>
+
+    <h2>Ready to Start Your Next Project?</h2>
+
+    <p>
+        Whether you're planning a renovation,
+        updating your home, or creating a new
+        outdoor space, we'd love to hear
+        about your ideas.
+    </p>
+
+    <a href="/contact" class="jnm-btn-primary">
+        Request an Estimate
+    </a>
+</section>
+
+@code {
+    private readonly List<ExpertiseItem> Expertise =
+    [
+        new(
+            "Whole-Home Remodeling",
+            "Complete home renovations, room reconfigurations, and interior transformations.",
+            "fas fa-house-user"
+        ),
+        new(
+            "Framing & Drywall",
+            "Residential framing, drywall installation, and interior renovation work.",
+            "fas fa-hammer"
+        ),
+        new(
+            "Flooring & Tile",
+            "Tile, laminate, and luxury vinyl plank (LVP) installation.",
+            "fas fa-th-large"
+        ),
+        new(
+            "Decks & Docks",
+            "Construction and improvements to decks, docks, and outdoor spaces.",
+            "fas fa-tools"
+        ),
+        new(
+            "Fencing",
+            "Fence installation and residential property improvements.",
+            "fas fa-border-all"
+        ),
+        new(
+            "Window Installation",
+            "Residential window installation and replacement.",
+            "fas fa-window-maximize"
+        )
+    ];
+
+    private record ExpertiseItem(
+        string Title,
+        string Description,
+        string Icon
+    );
+}

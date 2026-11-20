@@ -1,0 +1,159 @@
+﻿@inherits LayoutComponentBase
+@implements IDisposable
+@inject NavigationManager Navigation
+
+<header class="jnm-header">
+    <div class="jnm-header-inner">
+
+        <!-- Company Name / Logo -->
+        <a href="/" class="jnm-brand"
+           aria-label="JNM Premier Construction Home">
+            <span class="jnm-brand-main">
+                JNM PREMIER
+            </span>
+            <span class="jnm-brand-sub">
+                CONSTRUCTION
+            </span>
+        </a>
+
+        <!-- Mobile Navigation Toggle -->
+        <button type="button"
+                class="jnm-menu-toggle"
+                aria-label="Toggle navigation menu"
+                aria-controls="jnm-navigation"
+                aria-expanded="@menuOpen"
+                @onclick="ToggleMenu">
+            <i class="fas @(menuOpen ? "fa-times" : "fa-bars")"
+               aria-hidden="true"></i>
+        </button>
+
+        <!-- Main Navigation -->
+        <nav id="jnm-navigation"
+             class="jnm-nav @(menuOpen ? "open" : "")"
+             aria-label="Main navigation">
+
+            <NavLink href="/"
+                     Match="NavLinkMatch.All"
+                     @onclick="CloseMenu">
+                Home
+            </NavLink>
+
+            <NavLink href="/about"
+                     @onclick="CloseMenu">
+                About Us
+            </NavLink>
+
+            <NavLink href="/services"
+                     @onclick="CloseMenu">
+                Services
+            </NavLink>
+
+            <NavLink href="/projects"
+                     @onclick="CloseMenu">
+                Our Work
+            </NavLink>
+
+            <NavLink href="/contact"
+                     @onclick="CloseMenu">
+                Contact
+            </NavLink>
+
+            <NavLink href="/contact"
+                     class="jnm-nav-cta"
+                     @onclick="CloseMenu">
+                Request an Estimate
+            </NavLink>
+
+        </nav>
+    </div>
+</header>
+
+<!-- Page Content -->
+<main id="main-content" class="jnm-main">
+    @Body
+</main>
+
+<!-- Footer -->
+<footer class="jnm-footer">
+    <div class="jnm-footer-grid">
+
+        <div class="jnm-footer-about">
+            <h2>JNM Premier Construction</h2>
+
+            <p>
+                Family owned and operated.
+                Built on hard work, honest service,
+                and quality craftsmanship.
+            </p>
+
+            <p>
+                Insured in North Carolina &amp; Florida.
+            </p>
+        </div>
+
+        <div class="jnm-footer-links">
+            <h3>Quick Links</h3>
+
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/services">Our Services</a>
+            <a href="/projects">Our Work</a>
+            <a href="/contact">Contact</a>
+        </div>
+
+        <div class="jnm-footer-contact">
+            <h3>Where We Work</h3>
+
+            <p>
+                Based in Hope Mills, North Carolina.
+            </p>
+
+            <p>
+                Proudly serving Cumberland County
+                and surrounding counties.
+            </p>
+
+            <a href="/contact">
+                Request an Estimate
+            </a>
+        </div>
+
+    </div>
+
+    <div class="jnm-footer-bottom">
+        &copy; @DateTime.Now.Year JNM Premier Construction.
+        All Rights Reserved.
+    </div>
+</footer>
+
+@code {
+    private bool menuOpen = false;
+
+    protected override void OnInitialized()
+    {
+        Navigation.LocationChanged += HandleLocationChanged;
+    }
+
+    private void ToggleMenu()
+    {
+        menuOpen = !menuOpen;
+    }
+
+    private void CloseMenu()
+    {
+        menuOpen = false;
+    }
+
+    private void HandleLocationChanged(
+        object? sender,
+        Microsoft.AspNetCore.Components.Routing.LocationChangedEventArgs e)
+    {
+        menuOpen = false;
+        _ = InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        Navigation.LocationChanged -= HandleLocationChanged;
+    }
+}

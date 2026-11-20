@@ -1,0 +1,240 @@
+﻿@page "/"
+@using Syncfusion.Blazor.Buttons
+@inject NavigationManager Navigation
+
+<PageTitle>JNM Premier Construction | Hope Mills, NC</PageTitle>
+
+<!-- HERO SECTION -->
+<section class="jnm-hero">
+
+    <div class="jnm-hero-content">
+
+        <span class="jnm-eyebrow">
+            FAMILY OWNED &amp; OPERATED
+        </span>
+
+        <h1>
+            Built on Family Values.<br />
+            Backed by Hard Work.
+        </h1>
+
+        <p>
+            At JNM Premier Construction, we take pride
+            in quality craftsmanship, honest service,
+            and treating every project with the care
+            and attention it deserves.
+        </p>
+
+        <div class="jnm-hero-actions">
+
+            <SfButton CssClass="jnm-btn-primary"
+                      OnClick="@(() => GoTo("/contact"))">
+                Request an Estimate
+            </SfButton>
+
+            <SfButton CssClass="jnm-btn-outline"
+                      OnClick="@(() => GoTo("/projects"))">
+                View Our Work
+            </SfButton>
+
+        </div>
+
+        <div class="jnm-hero-location">
+            <i class="fas fa-map-marker-alt"
+               aria-hidden="true"></i>
+
+            Hope Mills, NC |
+            Cumberland County &amp; Surrounding Counties
+        </div>
+
+    </div>
+</section>
+
+<!-- TRUST INDICATORS -->
+<section class="jnm-trust">
+
+    <div class="jnm-trust-grid">
+
+        <div class="jnm-trust-item">
+            <i class="fas fa-home" aria-hidden="true"></i>
+            <div>
+                <h3>Family Owned</h3>
+                <p>Personal service and attention</p>
+            </div>
+        </div>
+
+        <div class="jnm-trust-item">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <div>
+                <h3>Insured</h3>
+                <p>North Carolina &amp; Florida</p>
+            </div>
+        </div>
+
+        <div class="jnm-trust-item">
+            <i class="fas fa-hammer" aria-hidden="true"></i>
+            <div>
+                <h3>Quality Craftsmanship</h3>
+                <p>Built with care and pride</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="jnm-about-section">
+
+    <div class="jnm-about-grid">
+
+        <div class="jnm-about-image">
+            <img src="/images/about-work.jpg"
+                 alt="JNM construction and renovation work"
+                 loading="lazy" />
+        </div>
+
+        <div class="jnm-about-content">
+
+            <span class="jnm-eyebrow">
+                GET TO KNOW US
+            </span>
+
+            <h2>
+                Small Business.<br />
+                Strong Values.<br />
+                Quality Work.
+            </h2>
+
+            <p>
+                JNM Premier Construction is a family-owned
+                and operated construction business based
+                in Hope Mills, North Carolina.
+            </p>
+
+            <p>
+                With experience in whole-home rehabilitation,
+                residential renovations, decks, docks,
+                and fencing, we bring a hands-on approach
+                to every project.
+            </p>
+
+            <p>
+                We believe in honest communication,
+                dependable service, and taking pride
+                in the work we do.
+            </p>
+
+            <a href="/about" class="jnm-text-link">
+                Learn More About Us
+                <i class="fas fa-arrow-right"
+                   aria-hidden="true"></i>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="jnm-services-section">
+
+    <div class="jnm-section-heading">
+        <span class="jnm-eyebrow">WHAT WE DO</span>
+
+        <h2>Our Services</h2>
+
+        <p>
+            From home renovations to outdoor improvements,
+            we're ready to help bring your next project
+            to life.
+        </p>
+    </div>
+
+    <div class="jnm-service-grid">
+
+        @foreach (var service in Services)
+        {
+            <article class="jnm-service-card">
+
+                <div class="jnm-service-image">
+                    <img src="@service.Image"
+                         alt="@service.Name"
+                         loading="lazy" />
+                </div>
+
+                <div class="jnm-service-content">
+                    <h3>@service.Name</h3>
+
+                    <p>@service.Description</p>
+
+                    <a href="/contact">
+                        Request an Estimate
+                        <i class="fas fa-arrow-right"
+                           aria-hidden="true"></i>
+                    </a>
+                </div>
+
+            </article>
+        }
+
+    </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="jnm-contact-cta">
+
+    <span class="jnm-eyebrow">
+        LET'S BUILD SOMETHING GREAT
+    </span>
+
+    <h2>Have a Project in Mind?</h2>
+
+    <p>
+        We'd love to hear about your ideas.
+        Contact JNM Premier Construction
+        to discuss your project and request an estimate.
+    </p>
+
+    <SfButton CssClass="jnm-btn-primary"
+              OnClick="@(() => GoTo("/contact"))">
+        Let's Talk About Your Project
+    </SfButton>
+
+</section>
+
+@code {
+    private void GoTo(string path)
+    {
+        Navigation.NavigateTo(path);
+    }
+
+    private readonly List<ConstructionService> Services =
+    [
+        new(
+            "Home Renovations",
+            "Whole-home rehabilitation, remodeling, and improvements.",
+            "/images/service-renovations.jpg"
+        ),
+        new(
+            "Decks",
+            "Deck construction, repairs, and outdoor living improvements.",
+            "/images/service-decks.jpg"
+        ),
+        new(
+            "Docks",
+            "Dock construction and repair projects.",
+            "/images/service-docks.jpg"
+        ),
+        new(
+            "Fencing",
+            "Fence installation, repairs, and property improvements.",
+            "/images/service-fencing.jpg"
+        )
+    ];
+
+    private record ConstructionService(
+        string Name,
+        string Description,
+        string Image
+    );
+}

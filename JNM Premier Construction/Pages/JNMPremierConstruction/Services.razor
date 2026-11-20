@@ -1,0 +1,314 @@
+﻿@page "/services"
+
+<PageTitle>Our Services | JNM Premier Construction</PageTitle>
+
+<!-- PAGE HEADER -->
+<section class="jnm-page-header jnm-services-header">
+    <div class="jnm-page-header-content">
+
+        <span class="jnm-eyebrow">
+            WHAT WE DO
+        </span>
+
+        <h1>Quality Work. Built to Last.</h1>
+
+        <p>
+            From complete home transformations to
+            outdoor improvements, we bring over
+            20 years of hands-on construction
+            experience to every project.
+        </p>
+
+    </div>
+</section>
+
+<!-- SERVICES INTRO -->
+<section class="jnm-services-intro">
+
+    <div class="jnm-section-heading">
+        <span class="jnm-eyebrow">
+            OUR EXPERTISE
+        </span>
+
+        <h2>Construction &amp; Renovation Services</h2>
+
+        <p>
+            Whether you're updating your home,
+            improving your property, or planning
+            a larger renovation, we're here to
+            help bring your vision to life.
+        </p>
+    </div>
+
+</section>
+
+<!-- SERVICE CARDS -->
+<section class="jnm-services-page-section">
+
+    <div class="jnm-services-page-grid">
+
+        @foreach (var service in ConstructionServices)
+        {
+            <article class="jnm-service-detail-card">
+
+                <div class="jnm-service-detail-image">
+                    <img src="@service.Image"
+                         alt="@service.ImageAlt"
+                         loading="lazy" />
+                </div>
+
+                <div class="jnm-service-detail-content">
+
+                    <div class="jnm-service-detail-icon">
+                        <i class="@service.Icon"
+                           aria-hidden="true"></i>
+                    </div>
+
+                    <h2>@service.Title</h2>
+
+                    <p>@service.Description</p>
+
+                    <ul class="jnm-service-features">
+                        @foreach (var feature in service.Features)
+                        {
+                            <li>
+                                <i class="fas fa-check"
+                                   aria-hidden="true"></i>
+                                @feature
+                            </li>
+                        }
+                    </ul>
+
+                    <a href="/contact"
+                       class="jnm-service-estimate-link">
+                        Request an Estimate
+                        <i class="fas fa-arrow-right"
+                           aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </article>
+        }
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="jnm-services-why">
+
+    <div class="jnm-services-why-inner">
+
+        <div class="jnm-services-why-content">
+
+            <span class="jnm-eyebrow">
+                WHY CHOOSE JNM
+            </span>
+
+            <h2>
+                Experience, Hard Work,
+                and Attention to Detail.
+            </h2>
+
+            <p>
+                At JNM Premier Construction, we
+                understand that every project
+                represents an investment in
+                your home and your future.
+            </p>
+
+            <p>
+                As a family-owned business with
+                over 20 years of construction
+                experience, we believe in
+                delivering dependable workmanship
+                and treating every home with care.
+            </p>
+
+            <a href="/about"
+               class="jnm-text-link">
+                Learn More About Us
+                <i class="fas fa-arrow-right"
+                   aria-hidden="true"></i>
+            </a>
+
+        </div>
+
+        <div class="jnm-services-why-image">
+            <img src="/images/about-framing.jpg"
+                 alt="Residential framing work by JNM Premier Construction"
+                 loading="lazy" />
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICE AREA -->
+<section class="jnm-services-area">
+
+    <div class="jnm-section-heading">
+
+        <span class="jnm-eyebrow">
+            LOCAL &amp; FAMILY OWNED
+        </span>
+
+        <h2>Proudly Serving Our Community</h2>
+
+        <p>
+            Based in Hope Mills, North Carolina,
+            we serve Cumberland County and
+            surrounding counties.
+            Contact us to discuss your project
+            and service location.
+        </p>
+
+    </div>
+
+    <div class="jnm-services-area-details">
+
+        <div>
+            <i class="fas fa-map-marker-alt"
+               aria-hidden="true"></i>
+            <h3>Hope Mills, NC</h3>
+            <p>Locally based and family owned</p>
+        </div>
+
+        <div>
+            <i class="fas fa-shield-alt"
+               aria-hidden="true"></i>
+            <h3>Insured</h3>
+            <p>North Carolina &amp; Florida</p>
+        </div>
+
+        <div>
+            <i class="fas fa-tools"
+               aria-hidden="true"></i>
+            <h3>20+ Years</h3>
+            <p>Hands-on construction experience</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="jnm-contact-cta">
+
+    <span class="jnm-eyebrow">
+        LET'S BUILD SOMETHING GREAT
+    </span>
+
+    <h2>Have a Project in Mind?</h2>
+
+    <p>
+        From renovations and flooring to
+        decks, docks, and fencing,
+        we're ready to discuss your ideas.
+    </p>
+
+    <a href="/contact" class="jnm-btn-primary">
+        Request an Estimate
+    </a>
+
+</section>
+
+@code {
+    private readonly List<ServiceItem> ConstructionServices =
+
+    [
+        new(
+            "Home Renovations & Remodeling",
+            "From interior updates to complete home transformations, our experience includes reconfiguring rooms, framing, and renovating existing spaces.",
+            "images/2026-speciality-tile.jpg",
+            "Renovated residential interior",
+            "fas fa-house-user",
+            [
+                "Whole-home renovations",
+                "Interior room reconfigurations",
+                "Residential improvements",
+                "Remodeling and rehabilitation"
+            ]
+        ),
+
+        new(
+            "Framing & Drywall",
+            "We bring hands-on experience in residential framing and drywall work, helping shape and finish interior spaces.",
+            "images/2026-framing.jpg",
+            "Interior framing during residential renovation",
+            "fas fa-hammer",
+            [
+                "Interior framing",
+                "Wall modifications",
+                "Drywall installation",
+                "Drywall repairs and finishing"
+            ]
+        ),
+
+        new(
+            "Flooring & Tile",
+            "Refresh your home's interior with flooring and tile installation backed by attention to detail and craftsmanship.",
+            "images/2026-speciality-tile.jpg",
+            "Tile flooring installation",
+            "fas fa-th-large",
+            [
+                "Ceramic and porcelain tile",
+                "Laminate flooring",
+                "Luxury vinyl plank (LVP)",
+                "Flooring replacement"
+            ]
+        ),
+
+        new(
+            "Decks & Docks",
+            "Our background includes constructing decks and docks that enhance outdoor spaces and complement the surrounding property.",
+            "images/service-decks.jpg",
+            "Residential wooden deck",
+            "fas fa-tree",
+            [
+                "Deck construction",
+                "Deck improvements",
+                "Dock construction",
+                "Outdoor living spaces"
+            ]
+        ),
+
+        new(
+            "Fence Installation",
+            "Improve your property's privacy, functionality, and appearance with residential fencing.",
+            "images/service-fencing.jpg",
+            "Residential fence installation",
+            "fas fa-border-all",
+            [
+                "Residential fencing",
+                "Privacy fences",
+                "Fence installation",
+                "Property improvements"
+            ]
+        ),
+
+        new(
+            "Window Installation",
+            "Our construction experience includes residential window installation and replacement as part of home improvement and renovation projects.",
+            "images/service-windows.jpg",
+            "Residential window installation",
+            "fas fa-window-maximize",
+            [
+                "Window installation",
+                "Window replacement",
+                "Renovation-related window work",
+                "Interior and exterior finishing"
+            ]
+        )
+    ];
+
+    private record ServiceItem(
+        string Title,
+        string Description,
+        string Image,
+        string ImageAlt,
+        string Icon,
+        List<string> Features
+    );
+}
